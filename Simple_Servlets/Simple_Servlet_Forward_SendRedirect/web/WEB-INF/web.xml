@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <context-param>
+        <param-name>contextParam</param-name>
+        <param-value>Test context param</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>AddDateTimeServlet</servlet-name>
+        <servlet-class>com.home.servlets.AddDateTimeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrintAttrServlet</servlet-name>
+        <servlet-class>com.home.servlets.PrintAttrServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestRedirectServlet</servlet-name>
+        <servlet-class>com.home.servlets.TestRedirectServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestIncludeServlet</servlet-name>
+        <servlet-class>com.home.servlets.TestIncludeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrintInfoServlet</servlet-name>
+        <servlet-class>com.home.servlets.PrintInfoServlet</servlet-class>
+
+        <init-param>
+            <param-name>servletParam</param-name>
+            <param-value>Test servlet param</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddDateTimeServlet</servlet-name>
+        <url-pattern>/showParams</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrintAttrServlet</servlet-name>
+        <url-pattern>/printAttr</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestRedirectServlet</servlet-name>
+        <url-pattern>/testRedirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestIncludeServlet</servlet-name>
+        <url-pattern>/testInclude</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrintInfoServlet</servlet-name>
+        <url-pattern>/printInfo</url-pattern>
+    </servlet-mapping>
+</web-app>

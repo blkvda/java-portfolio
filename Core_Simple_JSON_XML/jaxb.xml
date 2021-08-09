@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user>
+    <age>23</age>
+    <contactInfo>
+        <number>+7(800)5553535</number>
+        <operator>МТС</operator>
+    </contactInfo>
+    <experienceInfo>
+        <experience>
+            <ageOfExperience>1</ageOfExperience>
+            <companyName>TechD comp.</companyName>
+            <position>Junior JAVA developer</position>
+        </experience>
+        <experience>
+            <ageOfExperience>2</ageOfExperience>
+            <companyName>Intel</companyName>
+            <position>Middle JAVA developer</position>
+        </experience>
+    </experienceInfo>
+    <id>0</id>
+    <name>Levin Tom</name>
+</user>

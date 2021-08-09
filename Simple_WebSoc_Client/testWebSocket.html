@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Титульник</title>
+ </head>
+ <body>
+  <h1>Заголовок</h1>
+  <div id="output"></div>
+  <div>
+    <input id="inputText" type="text"/>
+    <input id="sendButton" type="button">
+  </div>
+  <script>
+        var output = document.getElementById("output");
+        var inputText = document.getElementById("inputText");
+        var sendButton = document.getElementById("sendButton");
+
+        sendButton.onclick = function(){sendMessage()};
+
+        writeOutput("test output");
+
+        var wsUri = "ws://localhost:8080" + "/chat";
+        var websocket = new WebSocket(wsUri);
+
+        websocket.onmessage = function(evt) { onMessage(evt) };
+        websocket.onopen = function(evt) { onOpen(evt) };
+        websocket.onerror = function(evt) { onError(evt) };
+
+        function sendMessage(){
+            console.log("inputText.value:" + inputText.value);
+            console.log("document.getElementById(\"inputText\").value:" + document.getElementById("inputText").value);
+            websocket.send(inputText.value);
+        }
+
+        function onMessage(evt){
+            writeOutput(evt.data);
+        }
+
+        function onOpen() {
+            writeOutput("Connected to " + wsUri);
+        }
+
+        function onError(evt) {
+            writeOutput('<span style="color: red;">ERROR:</span> ' + evt.data);
+        }   
+
+        function writeOutput(message){
+            output.innerHTML += "</br>" + message;
+        }
+  </script>
+ </body>
+</html>
